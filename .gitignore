@@ -1,23 +1,20 @@
-logs
+# This is the root .gitignore for GitHub Pages deployment
+# Source code is in /code directory
+# Built files (index.html, assets/, etc) are in root for GitHub Pages
+
+# System files
+.DS_Store
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
+# IDE
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-.env
+
+# Keep code directory separate (has its own .gitignore)
+# Keep built files in root (index.html, assets/, favicon.svg, robots.txt) for GitHub Pages

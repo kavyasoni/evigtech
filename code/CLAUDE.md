@@ -17,11 +17,15 @@ This is a personal portfolio/consulting website for a technical consultant speci
 
 ## Development Commands
 
+**Important:** All development commands must be run from the `/code` directory.
+
 ```bash
+cd code  # Navigate to source code directory
+
 # Start development server (runs on http://localhost:5173 by default)
 npm run dev
 
-# Build for production (outputs to dist/)
+# Build for production (outputs to parent directory ../ for GitHub Pages)
 npm run build
 
 # Preview production build locally
@@ -76,7 +80,34 @@ The project uses strict TypeScript settings (tsconfig.app.json:1):
 
 Vite configuration (vite.config.ts:1):
 - Base path set to `./` for flexible deployment
+- **Output directory:** `../` (parent directory) for GitHub Pages
+- **emptyOutDir:** `false` to preserve `.git`, `code/`, etc. in parent directory
 - Lucide-react excluded from optimization (to prevent bundling issues)
+
+### Repository Structure
+
+This repository is organized for GitHub Pages deployment:
+
+```
+/repo-root/                  # GitHub Pages serves from here
+├── index.html              # Built HTML (DO NOT edit directly)
+├── assets/                 # Built JS/CSS (generated)
+├── favicon.svg             # Built favicon
+├── robots.txt              # Built robots.txt
+├── README.md               # Repository overview
+└── code/                   # SOURCE CODE DIRECTORY
+    ├── src/                # React application source
+    ├── public/             # Static assets (copied to root on build)
+    ├── CLAUDE.md           # This file
+    ├── DEPLOYMENT.md       # Deployment guide
+    └── vite.config.ts      # Configured to build to ../
+```
+
+**Important:**
+- All source code edits happen in `/code` directory
+- `npm run build` outputs to parent directory (`../`)
+- Root files are built artifacts for GitHub Pages
+- Never edit `index.html` or `assets/` in root directly
 
 ## Styling Approach
 
@@ -119,12 +150,32 @@ The Supabase client is installed but not currently integrated. If adding backend
 
 ### Deployment
 
-The build outputs to `dist/` directory with relative paths (`base: './'`), making it suitable for:
-- Static hosting (Netlify, Vercel, GitHub Pages)
-- CDN deployment
-- Subdirectory deployment
+**GitHub Pages Setup:**
 
-Run `npm run build` followed by `npm run preview` to test the production build locally before deploying.
+The build outputs to parent directory (`../`) with relative paths (`base: './'`), configured specifically for GitHub Pages:
+
+1. Source code is in `/code` directory
+2. Run `cd code && npm run build` to build to root
+3. Built files go to repository root (index.html, assets/, etc.)
+4. GitHub Pages serves from repository root
+5. Commit both source code AND built files
+
+**Build Process:**
+```bash
+cd code
+npm run build        # Outputs to ../
+npm run preview      # Test at http://localhost:4173
+cd ..
+git add .            # Add both source and built files
+git commit -m "..."
+git push
+```
+
+**Alternative Hosting:**
+The built files can also be deployed to:
+- Netlify (drag & drop root directory)
+- Vercel (configure build: `cd code && npm run build`, output: `./`)
+- Any static hosting
 
 See `DEPLOYMENT.md` for comprehensive deployment instructions and pre-deployment checklist.
 
