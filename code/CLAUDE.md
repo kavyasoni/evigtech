@@ -17,25 +17,21 @@ This is a company website for EvigTech, a technical consulting company specializ
 
 ## Development Commands
 
-**Important:** All development commands must be run from the `/code` directory.
+**Important:** All commands run from repository root (working directory).
 
 ```bash
-cd code  # Navigate to source code directory
-
-# Start development server (runs on http://localhost:5173 by default)
+# Start development server (http://localhost:5173)
 npm run dev
 
-# Build for production (outputs to parent directory ../ for GitHub Pages)
+# Build for production (outputs to ../ for GitHub Pages)
 npm run build
 
-# Preview production build locally
+# Preview production build (http://localhost:4173)
 npm run preview
 
-# Run ESLint
-npm run lint
-
-# Type check without emitting files
-npm run typecheck
+# Lint and type checking
+npm run lint         # ESLint with TypeScript rules
+npm run typecheck    # TypeScript compiler check (no emit)
 ```
 
 ## Architecture
@@ -51,84 +47,67 @@ The application is a simple single-file React component architecture:
 
 ### App Component Architecture
 
-The `App.tsx` file (src/App.tsx:1) contains the entire application in a single component with the following sections:
+The `App.tsx` file contains the entire application in a single component with sections:
 
-1. **Skip Link** (src/App.tsx:15-17) - Accessibility skip-to-content link
-2. **Navigation** (src/App.tsx:18-54) - Fixed top navigation with mobile menu toggle
-3. **Hero Section** (src/App.tsx:56-76) - Main landing area with CTA
-4. **About Section** (src/App.tsx:78-114) - Biography and statistics grid
-5. **Expertise Section** (src/App.tsx:116-191) - Six expertise cards (development, full-stack, backend, frontend, data science, AI/ML)
-6. **Approach Section** (src/App.tsx:193-242) - Four-step process visualization
-7. **Contact Section** (src/App.tsx:244-288) - Contact CTA with email and social links
-8. **Footer** (src/App.tsx:290-294) - Copyright notice
+1. **Navigation** - Fixed top nav with EvigTech logo image and mobile menu toggle
+2. **Hero** - Main landing with tagline and CTA
+3. **About** - Company description with statistics grid (10+ years, 50+ projects, etc.)
+4. **Expertise** - Six expertise cards in grid layout
+5. **Approach** - Four-step process visualization
+6. **Contact** - Email CTA section
+7. **Footer** - Copyright notice
 
-The component uses:
-
-- `useState` for mobile menu toggle state
-- `scrollToSection` function for smooth scrolling navigation
-- Lucide React icons throughout (Menu, X, Mail, Linkedin, Github, ArrowRight, Code, Database, Brain, Layers, Server, Monitor)
-
-### TypeScript Configuration
-
-The project uses strict TypeScript settings (tsconfig.app.json:1):
-
-- Target: ES2020
-- Module: ESNext with bundler resolution
-- Strict mode enabled
-- noUnusedLocals and noUnusedParameters enabled
-- JSX: react-jsx (automatic runtime)
+Key implementation details:
+- `useState` for mobile menu toggle
+- `scrollToSection` function for smooth scroll navigation
+- Lucide React icons (Menu, X, Mail, ArrowRight, Code, Database, Brain, Layers, Server, Monitor)
+- Logo image at `/evigtech_logo.png` (120×32px) in navigation
 
 ### Build Configuration
 
-Vite configuration (vite.config.ts:1):
+**Critical: GitHub Pages Build Setup**
 
-- Base path set to `./` for flexible deployment
-- **Output directory:** `../` (parent directory) for GitHub Pages
-- **emptyOutDir:** `false` to preserve `.git`, `code/`, etc. in parent directory
-- Lucide-react excluded from optimization (to prevent bundling issues)
+Vite is configured (vite.config.ts) to build to parent directory for GitHub Pages:
+- `base: './'` - Relative paths for assets
+- `outDir: '../'` - Build output to repository root
+- `emptyOutDir: false` - Preserves `.git`, `code/`, etc. in parent dir
+- `exclude: ['lucide-react']` - Prevents bundling issues
 
-### Repository Structure
+TypeScript: Strict mode with ES2020 target, automatic JSX runtime
 
-This repository is organized for GitHub Pages deployment:
+### Repository Structure (GitHub Pages)
 
 ```
-/repo-root/                  # GitHub Pages serves from here
-├── index.html              # Built HTML (DO NOT edit directly)
-├── assets/                 # Built JS/CSS (generated)
-├── favicon.png             # Built favicon
-├── robots.txt              # Built robots.txt
-├── README.md               # Repository overview
-└── code/                   # SOURCE CODE DIRECTORY
-    ├── src/                # React application source
-    ├── public/             # Static assets (copied to root on build)
-    ├── CLAUDE.md           # This file
-    ├── DEPLOYMENT.md       # Deployment guide
-    └── vite.config.ts      # Configured to build to ../
+/repo-root/                  # GitHub Pages serves from root
+├── index.html              # Built HTML (generated - DO NOT edit)
+├── assets/                 # Built bundles (generated)
+├── evigtech_logo.png       # Company logo
+├── favicon.png             # Favicon and icons
+└── code/                   # SOURCE CODE (working directory)
+    ├── src/App.tsx         # Main single-file component
+    ├── public/             # Static assets (copied to root)
+    └── vite.config.ts      # Builds to ../
 ```
 
-**Important:**
+**Critical Rules:**
+- Working directory is `/code` (repository root in development)
+- Edit source files in `code/src/`, never root `index.html` or `assets/`
+- `npm run build` outputs to `../` (repository root for GitHub Pages)
+- Commit both source (`code/`) AND built files (root) for deployment
 
-- All source code edits happen in `/code` directory
-- `npm run build` outputs to parent directory (`../`)
-- Root files are built artifacts for GitHub Pages
-- Never edit `index.html` or `assets/` in root directly
+## Styling & Design System
 
-## Styling Approach
+Tailwind CSS utility classes exclusively. Key patterns:
 
-This project uses Tailwind CSS utility classes exclusively. The design system follows:
+**Color Palette:** Slate (50-900) grays, white backgrounds
+**Breakpoints:** Mobile-first with `md:` (768px) and `lg:` (1024px)
 
-- **Color Palette**: Slate (50-900) for grays, white backgrounds
-- **Spacing**: Consistent use of Tailwind spacing scale
-- **Responsive Design**: Mobile-first with `md:` and `lg:` breakpoints
-- **Effects**: Gradients, backdrop blur, hover transitions, shadows
-- **Components**: Card-based layouts with rounded borders and subtle shadows
-
-Key design patterns:
-
-- Gradient text using `bg-gradient-to-r bg-clip-text text-transparent`
-- Glass-morphism navigation with `backdrop-blur-md`
-- Hover scale effects on icons and cards
-- Consistent padding and spacing rhythm
+Design patterns:
+- Gradient text: `bg-gradient-to-r bg-clip-text text-transparent`
+- Glass-morphism nav: `backdrop-blur-md` with opacity
+- Hover effects: `hover:scale-110 transition-transform` on icons
+- Container: `max-w-7xl mx-auto` for content width
+- Sections: Alternating white/gradient backgrounds
 
 ## Notes for Development
 
@@ -155,38 +134,21 @@ If the application grows, consider extracting sections from App.tsx into separat
 
 The Supabase client is installed but not currently integrated. If adding backend features (contact form, analytics, CMS), initialize Supabase client in a separate file (e.g., `src/lib/supabase.ts`).
 
-### Deployment
+### Deployment Workflow
 
-**GitHub Pages Setup:**
-
-The build outputs to parent directory (`../`) with relative paths (`base: './'`), configured specifically for GitHub Pages:
-
-1. Source code is in `/code` directory
-2. Run `cd code && npm run build` to build to root
-3. Built files go to repository root (index.html, assets/, etc.)
-4. GitHub Pages serves from repository root
-5. Commit both source code AND built files
-
-**Build Process:**
+**GitHub Pages deployment process:**
 
 ```bash
-cd code
-npm run build        # Outputs to ../
+npm run build        # Build to ../ (repository root)
 npm run preview      # Test at http://localhost:4173
-cd ..
-git add .            # Add both source and built files
+git add -A           # Add source and built files
 git commit -m "..."
-git push
+git push             # Deploy to GitHub Pages
 ```
 
-**Alternative Hosting:**
-The built files can also be deployed to:
+Built files (root `index.html`, `assets/`) must be committed for GitHub Pages.
 
-- Netlify (drag & drop root directory)
-- Vercel (configure build: `cd code && npm run build`, output: `./`)
-- Any static hosting
-
-See `DEPLOYMENT.md` for comprehensive deployment instructions and pre-deployment checklist.
+See `DEPLOYMENT.md` for pre-deployment checklist and alternative hosting options.
 
 ## Production Readiness
 
@@ -215,17 +177,13 @@ The codebase includes several production-ready features:
 - Tailwind CSS purged of unused styles
 - Vite optimizations applied
 
-### Files to Update Before Production
+### Company Branding
 
-1. **Contact Information** (src/App.tsx:256): Email is set to contact@evigtech.com (update if different)
-2. **Social Links** (src/App.tsx:263, 275): Verify LinkedIn (linkedin.com/company/evigtech) and GitHub (github.com/evigtech) URLs are correct
-3. **Meta Tags** (index.html:16): Update og:url with actual domain (currently set to evigtech.com)
-4. **Favicon** (public/favicon.png): Replace with EvigTech logo/icon (basic SVG provided)
-5. **OG Images**: Add og:image and twitter:image URLs after creating social media preview images
+Current EvigTech branding assets:
+- Logo: `/evigtech_logo.png` (used in navigation)
+- Email: `contact@evigtech.com`
+- Domain: `evigtech.com` (in meta tags)
+- Favicon set: Multiple sizes in root (png, ico)
+- Footer: "© 2020 EvigTech Private Limited"
 
-### Security
-
-- All external links use `rel="noopener noreferrer"`
-- No sensitive data in client-side code
-- Environment variables template provided (.env.example)
-- Note: 2 moderate dev-only vulnerabilities remain in esbuild (see DEPLOYMENT.md)
+Update these in `src/App.tsx` and `index.html` if branding changes.
