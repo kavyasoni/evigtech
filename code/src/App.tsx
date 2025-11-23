@@ -391,7 +391,7 @@ function App() {
               <p className="text-lg sm:text-xl text-slate-300 mb-8 sm:mb-10">
                 Join 50+ founders who chose EvigTech to build their zero-to-one
                 product. Let's discuss your vision, timeline, and how we can
-                become your technical co-founder.
+                become your founding CTO.
               </p>
 
               <div className="flex flex-wrap justify-center gap-4">
