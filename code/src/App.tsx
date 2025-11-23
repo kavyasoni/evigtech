@@ -39,7 +39,7 @@ function App() {
             <img
               src="/evigtech_logo.png"
               alt="EvigTech"
-              className="h-8 w-auto object-contain"
+              className="h-6 sm:h-8 w-auto object-contain"
               width="120"
               height="32"
             />
@@ -88,28 +88,28 @@ function App() {
 
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t border-slate-200">
-            <div className="px-6 py-4 space-y-3">
+            <div className="px-6 py-4 space-y-1">
               <button
                 onClick={() => scrollToSection("about")}
-                className="block w-full text-left text-slate-700 hover:text-slate-900"
+                className="block w-full text-left text-slate-700 hover:text-slate-900 py-3 px-2 rounded hover:bg-slate-50 transition-colors"
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection("expertise")}
-                className="block w-full text-left text-slate-700 hover:text-slate-900"
+                className="block w-full text-left text-slate-700 hover:text-slate-900 py-3 px-2 rounded hover:bg-slate-50 transition-colors"
               >
                 Expertise
               </button>
               <button
                 onClick={() => scrollToSection("approach")}
-                className="block w-full text-left text-slate-700 hover:text-slate-900"
+                className="block w-full text-left text-slate-700 hover:text-slate-900 py-3 px-2 rounded hover:bg-slate-50 transition-colors"
               >
                 Approach
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="block w-full text-left text-slate-700 hover:text-slate-900"
+                className="block w-full text-left text-slate-700 hover:text-slate-900 py-3 px-2 rounded hover:bg-slate-50 transition-colors"
               >
                 Contact
               </button>
@@ -122,13 +122,13 @@ function App() {
         <section className="pt-32 pb-20 px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
-              <h1 className="text-5xl md:text-7xl font-bold text-slate-900 leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-slate-900 leading-tight mb-6">
                 Turning visions into
                 <span className="block bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
                   PMF ready products
                 </span>
               </h1>
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+              <p className="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed">
                 15+ years building startup products that launch in weeks, not
                 months. We use lean tech stacks and adaptive architecture—so you
                 validate quickly with early users, then evolve to serve millions
@@ -168,27 +168,27 @@ function App() {
                   expertise. One partner. Systems that grow with you.
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-xl border border-slate-200">
-                  <div className="text-4xl font-bold text-slate-900 mb-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 sm:p-6 rounded-xl border border-slate-200">
+                  <div className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">
                     15+
                   </div>
                   <div className="text-slate-600">Years Experience</div>
                 </div>
-                <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-xl border border-slate-200">
-                  <div className="text-4xl font-bold text-slate-900 mb-2">
+                <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 sm:p-6 rounded-xl border border-slate-200">
+                  <div className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">
                     50+
                   </div>
                   <div className="text-slate-600">Global Projects</div>
                 </div>
-                <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-xl border border-slate-200">
-                  <div className="text-4xl font-bold text-slate-900 mb-2">
+                <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 sm:p-6 rounded-xl border border-slate-200">
+                  <div className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">
                     100%
                   </div>
                   <div className="text-slate-600">Success Rate</div>
                 </div>
-                <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-xl border border-slate-200">
-                  <div className="text-4xl font-bold text-slate-900 mb-2">
+                <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 sm:p-6 rounded-xl border border-slate-200">
+                  <div className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">
                     24/7
                   </div>
                   <div className="text-slate-600">Partnership Support</div>
@@ -208,12 +208,12 @@ function App() {
               journey
             </p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="group bg-white p-8 rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all">
-                <div className="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Code className="w-7 h-7 text-white" />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              <div className="group bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                  <Code className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
                   Core Software Development
                 </h3>
                 <p className="text-slate-600 leading-relaxed">
@@ -226,11 +226,11 @@ function App() {
                 </p>
               </div>
 
-              <div className="group bg-white p-8 rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all">
-                <div className="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Layers className="w-7 h-7 text-white" />
+              <div className="group bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                  <Layers className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
                   Full-Stack Engineering
                 </h3>
                 <p className="text-slate-600 leading-relaxed">
@@ -241,11 +241,11 @@ function App() {
                 </p>
               </div>
 
-              <div className="group bg-white p-8 rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all">
-                <div className="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Server className="w-7 h-7 text-white" />
+              <div className="group bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                  <Server className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
                   Backend Systems
                 </h3>
                 <p className="text-slate-600 leading-relaxed">
@@ -258,11 +258,11 @@ function App() {
                 </p>
               </div>
 
-              <div className="group bg-white p-8 rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all">
-                <div className="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Monitor className="w-7 h-7 text-white" />
+              <div className="group bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                  <Monitor className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
                   Frontend Development
                 </h3>
                 <p className="text-slate-600 leading-relaxed">
@@ -273,11 +273,11 @@ function App() {
                 </p>
               </div>
 
-              <div className="group bg-white p-8 rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all">
-                <div className="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Database className="w-7 h-7 text-white" />
+              <div className="group bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                  <Database className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
                   Data Science & Systems
                 </h3>
                 <p className="text-slate-600 leading-relaxed">
@@ -288,11 +288,11 @@ function App() {
                 </p>
               </div>
 
-              <div className="group bg-white p-8 rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all">
-                <div className="w-14 h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Brain className="w-7 h-7 text-white" />
+              <div className="group bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-xl transition-all">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-slate-900 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
+                  <Brain className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
                   AI & Machine Learning
                 </h3>
                 <p className="text-slate-600 leading-relaxed">
@@ -316,12 +316,12 @@ function App() {
               launches
             </p>
 
-            <div className="grid md:grid-cols-4 gap-8">
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 bg-slate-900 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-slate-900 text-white rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4 sm:mb-6">
                   1
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">
                   Discovery
                 </h3>
                 <p className="text-slate-600">
@@ -332,10 +332,10 @@ function App() {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-slate-900 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-slate-900 text-white rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4 sm:mb-6">
                   2
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">
                   Adaptive Architecture
                 </h3>
                 <p className="text-slate-600">
@@ -349,10 +349,10 @@ function App() {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-slate-900 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-slate-900 text-white rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4 sm:mb-6">
                   3
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">
                   Development
                 </h3>
                 <p className="text-slate-600">
@@ -365,10 +365,10 @@ function App() {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-slate-900 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-slate-900 text-white rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4 sm:mb-6">
                   4
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">
                   Launch & Scale
                 </h3>
                 <p className="text-slate-600">
@@ -384,20 +384,20 @@ function App() {
 
         <section id="contact" className="py-20 px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-12 md:p-16 text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 text-center">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready to turn your startup idea into reality?
               </h2>
-              <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl text-slate-300 mb-8 sm:mb-10 max-w-2xl mx-auto">
                 Join 50+ founders who chose EvigTech to build their zero-to-one
                 product. Let's discuss your vision, timeline, and how we can
                 become your technical co-pilot.
               </p>
 
-              <div className="flex flex-wrap justify-center gap-4 mb-10">
+              <div className="flex flex-wrap justify-center gap-4">
                 <a
                   href="mailto:contact@evigtech.com"
-                  className="inline-flex items-center gap-2 bg-white text-slate-900 px-8 py-4 rounded-lg hover:bg-slate-100 transition-all hover:shadow-lg font-semibold"
+                  className="inline-flex items-center gap-2 bg-white text-slate-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-slate-100 transition-all hover:shadow-lg font-semibold text-base sm:text-lg"
                 >
                   <Mail className="w-5 h-5" />
                   Email Us
