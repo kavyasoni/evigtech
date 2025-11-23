@@ -413,7 +413,7 @@ function App() {
         role="contentinfo"
       >
         <div className="max-w-7xl mx-auto text-center text-slate-600">
-          <p>© 2020-2025 EvigTech Private Limited. All rights reserved.</p>
+          <p>© 2020 EvigTech Private Limited. All rights reserved.</p>
         </div>
       </footer>
     </div>
