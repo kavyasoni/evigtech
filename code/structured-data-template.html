@@ -1,0 +1,422 @@
+<!--
+  STRUCTURED DATA TEMPLATES FOR EVIGTECH
+
+  These JSON-LD schema.org markup snippets should be added to index.html
+  before the closing </head> tag to enhance search result appearance.
+
+  Benefits:
+  - Rich snippets in Google search results
+  - Better business information in knowledge graph
+  - Improved local search visibility
+  - Enhanced social media understanding
+
+  Instructions:
+  1. Copy the relevant script tags below
+  2. Update any placeholder values (marked with TODO comments)
+  3. Paste into index.html before </head>
+  4. Test with Google Rich Results Test: https://search.google.com/test/rich-results
+-->
+
+<!-- ORGANIZATION SCHEMA - Primary business information -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "EvigTech",
+  "alternateName": "EvigTech Private Limited",
+  "description": "Technical consulting company specializing in PMF-first product development for startups using adaptive architecture and lean tech stacks. We help startups ship in weeks, not months, and scale from 100 beta users to 10 million when they find product-market fit.",
+  "url": "https://evigtech.com",
+  "logo": "https://evigtech.com/evigtech_logo.png",
+  "image": "https://evigtech.com/og-image.png",
+  "foundingDate": "2020",
+  "email": "contact@evigtech.com",
+  "telephone": "+91-XXX-XXX-XXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/evigtech",
+    "https://github.com/evigtech"
+  ],
+  "areaServed": {
+    "@type": "Place",
+    "name": "Global"
+  },
+  "slogan": "Ship fast, find PMF, scale smart",
+  "serviceType": [
+    "Startup Technical Consulting",
+    "Product-Market Fit Engineering",
+    "MVP Development",
+    "Adaptive Architecture Design",
+    "Full-Stack Development",
+    "CTO-as-a-Service",
+    "Technical Co-Founder Partnership",
+    "Zero-to-One Product Development",
+    "Lean Tech Stack Development",
+    "Scalable Systems Architecture"
+  ],
+  "knowsAbout": [
+    "Product-Market Fit",
+    "Adaptive Architecture",
+    "Startup Engineering",
+    "Full-Stack Development",
+    "Backend Systems",
+    "Frontend Development",
+    "Data Science",
+    "Machine Learning",
+    "AI Integration",
+    "Scalable Systems"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "50",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "priceRange": "$$-$$$",
+  "paymentAccepted": "Wire Transfer, Credit Card, Invoice",
+  "currenciesAccepted": "USD, EUR, INR"
+}
+</script>
+
+<!-- WEBSITE SCHEMA - Enhanced site information -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "EvigTech",
+  "url": "https://evigtech.com",
+  "description": "Ship startup products in weeks, not months with PMF-first engineering and adaptive architecture",
+  "publisher": {
+    "@type": "Organization",
+    "name": "EvigTech"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://evigtech.com/?s={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- BREADCRUMB SCHEMA - For future multi-page navigation -->
+<!--
+  TODO: Uncomment and customize when adding case studies, blog, or other pages
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://evigtech.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Case Studies",
+      "item": "https://evigtech.com/case-studies"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "FinTech Startup PMF Success",
+      "item": "https://evigtech.com/case-studies/fintech-startup-pmf"
+    }
+  ]
+}
+</script>
+-->
+
+<!-- FAQ SCHEMA - Add when FAQ section exists -->
+<!--
+  TODO: Implement FAQ section in App.tsx first, then uncomment and customize
+  This creates rich snippets with expandable FAQs in search results
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How fast can EvigTech ship a startup MVP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We typically ship startup MVPs in 4-8 weeks using lean tech stacks and adaptive architecture. This allows you to validate your product-market fit with real users quickly, without over-engineering or accumulating technical debt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is adaptive architecture?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Adaptive architecture means right-sizing your tech stack for your current stage. We build simple, focused systems for early validation with beta users, then evolve the architecture as you find product-market fit and scale to millions of users. This approach avoids both over-engineering (slow, expensive) and under-engineering (systems that collapse under growth)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you only work with startups?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We specialize in zero-to-one product development for startups, where speed to market and finding PMF are critical. Our expertise in adaptive architecture and lean tech stacks is specifically optimized for early-stage companies navigating the journey from initial idea to product-market fit to scaling."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes EvigTech different from other consulting firms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlike traditional consultancies that either over-engineer (slow, expensive) or build prototypes that collapse under real growth, we use PMF-first engineering and adaptive architecture. We optimize for your current milestone—whether that's 100 beta users or 10 million at scale—with systems that evolve as your metrics justify it. 15+ years, 50+ successful launches, full-stack expertise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How involved will EvigTech be after launch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide production deployment, monitoring, performance optimization, and on-call support through critical growth phases. We don't just launch—we ensure your systems scale as your user base grows. Your codebase stays well-documented and transfer-ready, because we build your long-term asset, not vendor lock-in."
+      }
+    }
+  ]
+}
+</script>
+-->
+
+<!-- SERVICE SCHEMA - Detailed service offerings -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Startup Technical Consulting",
+  "provider": {
+    "@type": "Organization",
+    "name": "EvigTech"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Global"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Technical Consulting Services",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Core Software Development",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "PMF-First Development",
+              "description": "Pragmatic, well-tested code using proven patterns that accelerate shipping. Systems you can iterate on rapidly pre-PMF and refactor confidently when scaling to millions."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Full-Stack Engineering",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "End-to-End Development",
+              "description": "From PostgreSQL to React, from APIs to user flows. Complete stack coverage with seamless integration, optimal performance, and one team accountable for the entire product."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Backend Systems",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Adaptive Backend Architecture",
+              "description": "Right-sized architectures that get you to market in weeks, with clean foundations that evolve into distributed systems when growth demands it. Fast APIs, bank-level security, no over-engineering."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Frontend Development",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Conversion-Focused UI",
+              "description": "Lightning-fast, accessible interfaces using modern frameworks. Beautiful design that drives engagement, reduces bounce rates, and converts visitors into customers."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Data Science & Systems",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Production Data Pipelines",
+              "description": "Production-grade pipelines, real-time analytics platforms, and intelligence engines that transform raw data into insights that move metrics."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "AI & Machine Learning",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Business-Focused AI",
+              "description": "AI implementations grounded in business outcomes. From recommendation systems that boost revenue to NLP that understands intent—AI that ships, not science projects."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+</script>
+
+<!-- ABOUT PAGE SCHEMA - Organization details -->
+<!-- TODO: Create if adding dedicated About page -->
+<!--
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "EvigTech",
+    "description": "We've spent 15+ years mastering the hardest challenge in startup development: building fast enough to find Product-Market Fit, without creating technical debt that kills you at scale."
+  }
+}
+</script>
+-->
+
+<!-- LOCAL BUSINESS SCHEMA - If targeting specific geography -->
+<!--
+  TODO: Uncomment and customize if emphasizing local presence
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "EvigTech",
+  "@id": "https://evigtech.com",
+  "url": "https://evigtech.com",
+  "logo": "https://evigtech.com/evigtech_logo.png",
+  "image": "https://evigtech.com/og-image.png",
+  "description": "PMF-first technical consulting for startups",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "TODO: Add street address if public",
+    "addressLocality": "TODO: City",
+    "addressRegion": "TODO: State/Province",
+    "postalCode": "TODO: PIN/ZIP",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "TODO",
+    "longitude": "TODO"
+  },
+  "telephone": "+91-XXX-XXX-XXXX",
+  "email": "contact@evigtech.com",
+  "priceRange": "$$-$$$",
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "sameAs": [
+    "https://www.linkedin.com/company/evigtech",
+    "https://github.com/evigtech"
+  ]
+}
+</script>
+-->
+
+<!-- ARTICLE SCHEMA - For blog posts -->
+<!--
+  TODO: Use this template for each blog post
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Your Startup Doesn't Need Kubernetes (Yet)",
+  "description": "Most startups over-engineer their infrastructure before finding PMF. Learn when to scale and when to stay lean.",
+  "image": "https://evigtech.com/blog/kubernetes-article.png",
+  "author": {
+    "@type": "Organization",
+    "name": "EvigTech"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "EvigTech",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://evigtech.com/evigtech_logo.png"
+    }
+  },
+  "datePublished": "2025-01-15",
+  "dateModified": "2025-01-15",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://evigtech.com/blog/kubernetes-before-pmf"
+  }
+}
+</script>
+-->
+
+<!--
+  IMPLEMENTATION CHECKLIST:
+
+  Phase 1 - Essential (Do First):
+  [ ] Add Organization schema (first script above)
+  [ ] Add Website schema (second script above)
+  [ ] Update placeholder values:
+      - Social media URLs (LinkedIn, GitHub)
+      - Phone number (if public)
+      - Any other TODOs marked in comments
+  [ ] Test with Google Rich Results Test
+
+  Phase 2 - When Content Expands:
+  [ ] Add FAQ schema when FAQ section created
+  [ ] Add Breadcrumb schema when multiple pages exist
+  [ ] Add Article schema for blog posts
+  [ ] Add LocalBusiness schema if targeting geographic markets
+
+  Phase 3 - Advanced:
+  [ ] Add Review/Rating schema when collecting testimonials
+  [ ] Add Video schema if adding video content
+  [ ] Add HowTo schema for technical guides
+  [ ] Add Course schema if creating educational content
+
+  TESTING TOOLS:
+  - Google Rich Results Test: https://search.google.com/test/rich-results
+  - Schema.org Validator: https://validator.schema.org/
+  - Google Search Console Rich Results Report
+
+  MONITORING:
+  - Check Google Search Console for rich result errors
+  - Monitor click-through rates on rich result pages
+  - Track which schema types drive most engagement
+-->
